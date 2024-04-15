@@ -1,18 +1,18 @@
 <template>
     <main>
-        <div>
-            Select menu
-        </div>
+        <SelectMenu />
         <CharacterList />
     </main>
 </template>
 
 <script>
-import CharacterList from './CharacterList.vue';
+    import SelectMenu from './SelcetMenu.vue'
+    import CharacterList from './CharacterList.vue';
     export default {
         name: 'MainComponent',
         components:{
             CharacterList,
+            SelectMenu
         }
     }
 </script>
@@ -22,5 +22,11 @@ import CharacterList from './CharacterList.vue';
 
     main{
         background-color: $mainColor;
+    }
+
+    .ldg-select{
+        padding: 30px;
+        width: 14%;
+        margin-left: 270px;
     }
 </style>
