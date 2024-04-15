@@ -1,15 +1,16 @@
 <template>
-  <HeaderComponent/>
+  <HeaderComponent />
   <MainComponent />
 </template>
 
 <script>
-  import {store} from './store.js';
-  import HeaderComponent from './components/HeaderComponent.vue';
-  import MainComponent from './components/MainComponent.vue'
+import {store} from './store.js';
+import axios from 'axios';
+import HeaderComponent from './components/HeaderComponent.vue';
+import MainComponent from './components/MainComponent.vue';
   export default {
-    name: 'Vue',
-    components: {
+    name: 'App',
+    components:{
       HeaderComponent,
       MainComponent
     },
@@ -17,6 +18,16 @@
       return {
         store
       }
+    },
+    methods: {
+      getCards(){
+        axios.get(this.store.apiUrl + this.store.endPoint.name).then((res) => {
+          this.store.name = res.data.data;
+        })
+      }
+    },
+    created() {
+      this.getCards();
     },
   }
 </script>
