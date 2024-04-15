@@ -1,5 +1,8 @@
 <template>
     <main>
+        <div>
+            Select menu
+        </div>
         <CharacterList />
     </main>
 </template>
@@ -16,7 +19,7 @@ import CharacterList from './CharacterList.vue';
 
 <style lang="scss" scoped>
     @use '../assets/styles/partials/variables' as *;
-       
+
     main{
         background-color: $mainColor;
     }
