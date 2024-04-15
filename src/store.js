@@ -6,5 +6,10 @@ export const store = reactive({
         "name": "name",
         "archetype": "archetype"
       },
-      name: []
+      name: [],
+      cardsFound: 0,
+      loading: false,
+      error:{
+        message: null
+      }
 });

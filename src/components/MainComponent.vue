@@ -1,18 +1,21 @@
 <template>
     <main>
         <SelectMenu />
+        <TotalComponent />
         <CharacterList />
     </main>
 </template>
 
 <script>
-    import SelectMenu from './SelcetMenu.vue'
-    import CharacterList from './CharacterList.vue';
+    import SelectMenu from './SelcetMenu.vue';
+    import TotalComponent from './TotalComponent.vue';
+    import CharacterList from './CardList.vue';
     export default {
         name: 'MainComponent',
         components:{
             CharacterList,
-            SelectMenu
+            SelectMenu,
+            TotalComponent
         }
     }
 </script>

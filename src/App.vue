@@ -21,8 +21,18 @@ import MainComponent from './components/MainComponent.vue';
     },
     methods: {
       getCards(){
+        this.store.loading = true;
         axios.get(this.store.apiUrl + this.store.endPoint.name).then((res) => {
           this.store.name = res.data.data;
+        }).catch((error) =>{
+            // handle error
+           console.log(error);
+           this.store.error.message = error.message;
+        }).finally(() => {
+          setTimeout(() => {
+            this.store.loading = false;
+            console.log('finally');
+          }, 2000);
         })
       }
     },
