@@ -1,13 +1,23 @@
 <template>
-  <div>
-    <h1>ciao</h1>
-    <i class="fa fa-solid fa-home"></i>
-  </div>
+  <HeaderComponent/>
+  <MainComponent />
 </template>
 
 <script>
+  import {store} from './store.js';
+  import HeaderComponent from './components/HeaderComponent.vue';
+  import MainComponent from './components/MainComponent.vue'
   export default {
-    
+    name: 'Vue',
+    components: {
+      HeaderComponent,
+      MainComponent
+    },
+    data() {
+      return {
+        store
+      }
+    },
   }
 </script>
 
