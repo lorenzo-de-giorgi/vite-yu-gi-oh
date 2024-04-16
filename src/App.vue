@@ -39,7 +39,7 @@ import MainComponent from './components/MainComponent.vue';
               archetype: card.archetype,
             }
           });
-          // this.store.cardsFound = res.data.meta.total_rows
+          this.store.cardsFound = res.data.meta.current_rows
         }).catch((error) =>{
             // handle error
            console.log(error);
