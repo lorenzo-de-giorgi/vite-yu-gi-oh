@@ -1,21 +1,34 @@
 <template>
     <main>
-        <SelectMenu />
         <TotalComponent />
         <CharacterList />
     </main>
 </template>
 
 <script>
-    import SelectMenu from './SelcetMenu.vue';
+    import { store } from '../store';
     import TotalComponent from './TotalComponent.vue';
     import CharacterList from './CardList.vue';
     export default {
         name: 'MainComponent',
         components:{
             CharacterList,
-            SelectMenu,
             TotalComponent
+        },
+        data() {
+            return {
+                
+            }
+        },
+        methods: {
+            setParams(){
+                if(this.store.statusFilter){
+                    this.store.options.paramas.archetype = this.store.statusFilter
+                } else {
+                    delete this.store.options.params.archetype
+                }
+                this.getCards()
+            },
         }
     }
 </script>
